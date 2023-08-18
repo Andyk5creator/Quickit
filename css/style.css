@@ -373,7 +373,7 @@ html {
 body {
   font-size: 1.125rem;
   line-height: 1.66;
-  background-color: #333;
+  background-color: #0a1125;
   font-family: "Inter";
 }
 
@@ -418,30 +418,171 @@ html.lock .header {
   display: none;
 }
 
-.form {
-  margin-top: 3.125rem;
-  max-width: 18.75rem;
-  margin: 0 auto;
-  display: -ms-grid;
-  display: grid;
-  gap: 0.875rem;
+.no-webp .rain {
+  background: url("../img/forest.jpg") bottom/cover no-repeat; }
+
+.rain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
-.form__input {
-  padding: 0.625rem;
-  height: 2rem;
-  background-color: #fff;
+.drop {
+  position: absolute;
+  bottom: 100%;
+  width: 0.9375rem;
+  height: 7.5rem;
+  pointer-events: none;
+  -webkit-animation: drop 0.5s infinite linear;
+          animation: drop 0.5s infinite linear;
 }
 
-.form textarea.form__input {
-  height: 6.25rem;
+@-webkit-keyframes drop {
+  0% {
+    -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+  }
+
+  75% {
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+
+  100% {
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
 }
 
-.form__button {
-  background-color: #0e5da7;
-  height: 2rem;
-  color: var(--color-100);
-  text-transform: uppercase;
+@keyframes drop {
+  0% {
+    -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+  }
+
+  75% {
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+
+  100% {
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+}
+
+.stem {
+  width: 0.0625rem;
+  height: 100%;
+  margin-left: 0.4375rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.25)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
+  -webkit-animation: stem 0.5s infinite linear;
+          animation: stem 0.5s infinite linear;
+}
+
+@-webkit-keyframes stem {
+  0% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes stem {
+  0% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.splat {
+  width: 0.9375rem;
+  height: 0.625rem;
+  border-top: 0.125rem dotted rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  opacity: 1;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-animation: splat 0.5s infinite linear;
+          animation: splat 0.5s infinite linear;
+}
+
+@-webkit-keyframes splat {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+
+  80% {
+    opacity: 1;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+
+  90% {
+    opacity: 0.5;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes splat {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+
+  80% {
+    opacity: 1;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+
+  90% {
+    opacity: 0.5;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
 }
 
 @media (max-width: 47.93625em) {
@@ -544,3 +685,5 @@ html.lock .header {
     cursor: default;
   }
 }
+
+.webp .rain { background: url(../img/forest.webp) bottom/cover no-repeat; }
