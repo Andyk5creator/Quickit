@@ -2907,7 +2907,7 @@ html.lock .menu::before {
     color: var(--blue-100);
   }
 
-  .footer__terms:hover {
+  .footer__terms a:hover {
     text-decoration: underline;
   }
 
